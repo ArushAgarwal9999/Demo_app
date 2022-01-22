@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th>Checked</th>
+      <th>Task Name</th>
+      <th>Description </th>
+      <th>Repeating Task</th>
+    </tr>
+    <tr *ngFor="let data of this.tableData">
+        <td><input type="checkbox" checked (click)="onCheckClick(data.index)" ></td>
+        <td> {{data.taskname}}</td>
+        <td> {{data.taskDescription}}</td>
+        <td> {{data.repeatingTask}}</td>  
+    </tr>
+</table>

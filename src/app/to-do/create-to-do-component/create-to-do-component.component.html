@@ -1,0 +1,49 @@
+
+  <div class="container">
+    <div class="content">
+      <!-- <div class="right-side"> -->
+        <div class="topic-text">Add Task</div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <div class="input-box">
+            <label> Task Name  </label>
+          <input type="text" id="Name" name="Name" formControlName="Name" placeholder="Enter task name">
+        </div>
+        <div class="input-box1">
+            <label> Description</label>
+         <textarea placeholder="Enter the description"  formControlName="description"></textarea>
+        </div>
+        <div class="input-box">
+            <label> Repeating Task </label>
+
+            <select  (change)="onSubmit()" formControlName="repeatingTask" class="form-control">
+                <option disabled>Repeating Task</option>
+                <option > Select Option </option>
+                <option>Yes</option>
+                <option>No</option>
+                <!-- <option>Choose Website</option> -->
+               
+            </select>
+        </div>
+        <div  style="margin-top:3%">
+          <label> Repeating Task To Do </label>  
+          <app-to-do-list-component [tableData] = this._TodoService.allTableData (changeData)="getUpdatedData($event)">        </app-to-do-list-component>
+      </div>
+        <div  style="margin-top:3%">
+            <label> Repeating Task Done </label>
+            <app-done-list-component [tableData] = this._TodoService.allTableData (changeData)="getUpdatedData($event)">    </app-done-list-component>
+
+        </div>
+        
+      </form>
+    </div>
+    </div>
+  <!-- </div> -->
+
+  <div>
+     
+     
+
+  </div>
+
+
+
